@@ -20,7 +20,7 @@ public class TestAuth extends BaseTest {
   }
 
   @Test
-  @DisplayName("Авторизация пользователя. Положительный сценарий.")
+  @DisplayName("Авторизация пользователя. Положительный сценарий")
   void testAuth() {
     openStartPage()
         .inputLogin(login)
