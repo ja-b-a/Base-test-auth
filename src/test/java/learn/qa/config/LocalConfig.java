@@ -10,6 +10,6 @@ public enum LocalConfig implements Config {
   @Nonnull
   @Override
   public String frontUrl() {
-    return "http://test4-jaga.lukit.ru";
+    return "<front-url>";
   }
 }

@@ -1,4 +1,4 @@
-package learn.qa.pages;
+package learn.qa.ui.pages;
 
 import com.codeborne.selenide.Selenide;
 

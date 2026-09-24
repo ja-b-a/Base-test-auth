@@ -1,4 +1,4 @@
-package learn.qa.pages.auth;
+package learn.qa.ui.pages.auth;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$x;
@@ -9,8 +9,8 @@ import io.qameta.allure.Step;
 import java.time.Duration;
 import javax.annotation.ParametersAreNonnullByDefault;
 import learn.qa.config.LocalConfig;
-import learn.qa.pages.BasePage;
-import learn.qa.pages.desktop.DesktopPage;
+import learn.qa.ui.pages.BasePage;
+import learn.qa.ui.pages.desktop.DesktopPage;
 
 /**
  * Страница авторизации (стартовая страница)

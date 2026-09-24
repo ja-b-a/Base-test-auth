@@ -1,8 +1,8 @@
-package learn.qa.test.auth;
+package learn.qa.ui.test.auth;
 
-import static learn.qa.pages.auth.StartPage.openStartPage;
+import static learn.qa.ui.pages.auth.StartPage.openStartPage;
 
-import learn.qa.test.BaseTest;
+import learn.qa.ui.test.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,8 +15,8 @@ public class TestAuth extends BaseTest {
 
   @BeforeEach
   void before() {
-    login = "autotest_extra5@rt.ru";
-    password = "Autotest1";
+    login = "login";
+    password = "password";
   }
 
   @Test

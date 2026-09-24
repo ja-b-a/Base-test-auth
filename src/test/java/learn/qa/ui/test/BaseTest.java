@@ -1,4 +1,4 @@
-package learn.qa.test;
+package learn.qa.ui.test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
