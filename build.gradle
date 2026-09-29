@@ -34,31 +34,31 @@ repositories {
     mavenCentral()
 }
 
-allureServer {
-    relativeResultDir = 'build/allure-results'
-    allureServerUrl = 'http://127.0.0.1:8081'
+//allureServer {
+//    relativeResultDir = 'build/allure-results'
+//    allureServerUrl = 'http://127.0.0.1:8081'
+//
+//    requestToGeneration = { uuid ->
+//        """{"reportSpec": {
+//                "path": [ "Amurskiy-A" ],
+//                "executorInfo": {
+//                    "buildName": "Amurskiy-A",
+//                    "buildUrl": "Amurskiy-A_autotests",
+//                    "reportName": "Amurskiy-A_autotests"
+//                }
+//            },
+//            "results": [ "$uuid" ],
+//            "deleteResults": true
+//        }"""
+//    }
+//}
 
-    requestToGeneration = { uuid ->
-        """{"reportSpec": {
-                "path": [ "Amurskiy-A" ],
-                "executorInfo": {
-                    "buildName": "Amurskiy-A",
-                    "buildUrl": "Amurskiy-A_autotests",
-                    "reportName": "Amurskiy-A_autotests"
-                }
-            },
-            "results": [ "$uuid" ],
-            "deleteResults": true
-        }"""
-    }
-}
-
-tasks.getByName('allureArchive') {
-    mustRunAfter "test"
-}
-tasks.getByName('test') {
-    finalizedBy "allureServerGenerate"
-}
+//tasks.getByName('allureArchive') {
+//    mustRunAfter "test"
+//}
+//tasks.getByName('test') {
+//    finalizedBy "allureServerGenerate"
+//}
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
@@ -71,6 +71,8 @@ dependencies {
     testImplementation("io.qameta.allure:allure-selenide:${allureVersion}") {
         exclude group: 'com.codeborne'
     }
+    testImplementation "io.qameta.allure:allure-assertj:${allureVersion}"
+    testImplementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
     // WEB
     testImplementation "com.codeborne:selenide:${selenideVersion}"
     // Annotation
@@ -78,6 +80,13 @@ dependencies {
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     testImplementation "com.github.spotbugs:spotbugs-annotations:${spotbugsVersion}"
     testAnnotationProcessor "com.github.spotbugs:spotbugs-annotations:${spotbugsVersion}"
+    testImplementation "org.slf4j:slf4j-simple:2.0.13"
+    // Rest assured
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+    // JSON
+    testImplementation 'org.json:json:20231013'
+    // Assertions
+    testImplementation 'org.assertj:assertj-core:3.27.7'
 }
 
 test {
